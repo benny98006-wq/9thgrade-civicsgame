@@ -133,19 +133,19 @@
               <div className="grid grid-cols-2 gap-4">
                 <button onClick={() => work('food')} className="p-4 bg-green-100 hover:bg-green-200 rounded-xl flex flex-col items-center transition active:scale-95 duration-200">
                   <Wheat className="w-8 h-8 text-green-600 mb-2" />
-                  <span>種田 (消耗體力)</span>
+                  <span>種田 </span>
                 </button>
                 <button onClick={() => work('clothes')} className="p-4 bg-purple-100 hover:bg-purple-200 rounded-xl flex flex-col items-center transition active:scale-95 duration-200">
                   <ShoppingBag className="w-8 h-8 text-purple-600 mb-2" />
-                  <span>織布 (消耗體力)</span>
+                  <span>織布 </span>
                 </button>
                 <button onClick={() => work('house')} className="p-4 bg-amber-100 hover:bg-amber-200 rounded-xl flex flex-col items-center transition active:scale-95 duration-200">
                   <Hammer className="w-8 h-8 text-amber-600 mb-2" />
-                  <span>蓋房 (消耗體力)</span>
+                  <span>蓋房 </span>
                 </button>
                 <button onClick={rest} className="p-4 bg-gray-100 hover:bg-gray-200 rounded-xl flex flex-col items-center transition border-2 border-gray-300 active:scale-95 duration-200">
                   <RefreshCw className="w-8 h-8 text-gray-600 mb-2" />
-                  <span>睡覺 (恢復體力)</span>
+                  <span>睡覺 </span>
                 </button>
               </div>
 
@@ -176,7 +176,7 @@
                 setMyItems([...newItems, 'meat']);
                 addLog("成功用 🐟魚 交換了 🍖肉！");
               } else {
-                addLog("獵人說：我只想要魚...");
+                addLog("擅長打獵的人說：我只想要魚...");
               }
             } else if (npc === 'Farmer') {
               if (myItems.includes('meat')) {
@@ -185,7 +185,7 @@
                 setMyItems([...newItems, 'apple']);
                 addLog("成功用 🍖肉 交換了 🍎蘋果！");
               } else {
-                addLog("農夫說：我餓了，想吃肉...");
+                addLog("擅長種田的人說：我餓了，想吃肉...");
               }
             } else if (npc === 'Blacksmith') {
               if (myItems.includes('apple')) {
@@ -195,7 +195,7 @@
                 setHasAxe(true);
                 addLog("成功用 🍎蘋果 交換了 🪓斧頭！");
               } else {
-                addLog("鐵匠說：口好渴，有水果嗎？");
+                addLog("擅長製鐵的人說：口好渴，有水果嗎？");
               }
             }
           };
@@ -204,7 +204,7 @@
             <div className="space-y-6">
               <div className="bg-orange-50 p-4 rounded-lg border border-orange-200 animate-in fade-in slide-in-from-bottom-4 duration-500">
                 <h3 className="font-bold text-orange-800 text-lg mb-2">任務目標：換取一把斧頭 🪓</h3>
-                <p className="text-gray-700">你是一位漁夫，你手上只有魚。你需要找到願意跟你交換的人，最終換到斧頭。</p>
+                <p className="text-gray-700">你是一位擅長捕魚的人，你手上只有魚。你需要找到願意跟你交換的人，最終換到斧頭。</p>
                 <div className="mt-3 flex gap-2 p-2 bg-white rounded border min-h-[50px] items-center">
                   <span className="text-sm font-bold text-gray-500">你的背包：</span>
                   {myItems.map((item, i) => (
@@ -221,7 +221,7 @@
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-xl">🏹</div>
                       <div>
-                        <div className="font-bold">獵人</div>
+                        <div className="font-bold">擅長捕獵的人</div>
                         <div className="text-xs text-gray-500">擁有：🍖肉 / 想要：🐟魚</div>
                       </div>
                     </div>
@@ -233,7 +233,7 @@
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center text-xl">👨‍🌾</div>
                       <div>
-                        <div className="font-bold">農夫</div>
+                        <div className="font-bold">擅長種田的人</div>
                         <div className="text-xs text-gray-500">擁有：🍎蘋果 / 想要：🍖肉</div>
                       </div>
                     </div>
@@ -245,7 +245,7 @@
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-xl">⚒️</div>
                       <div>
-                        <div className="font-bold">鐵匠</div>
+                        <div className="font-bold">擅長製鐵的人</div>
                         <div className="text-xs text-gray-500">擁有：🪓斧頭 / 想要：🍎蘋果</div>
                       </div>
                     </div>
@@ -364,12 +364,12 @@
             <div className="space-y-6">
               <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-200 animate-in fade-in slide-in-from-bottom-4 duration-500">
                 <h3 className="font-bold text-indigo-800 text-lg mb-2">任務目標：現代經濟</h3>
-                <p className="text-gray-700">現在是法定貨幣時代。國家保證這張紙/這個數字有價值。賺錢很容易，花錢更快！</p>
+                <p className="text-gray-700">現在是法定貨幣時代。國家保證這張紙有價值。</p>
                 
                 <div className="mt-4 bg-gradient-to-r from-gray-800 to-gray-600 p-4 rounded-xl text-white shadow-lg flex justify-between items-center transform transition hover:scale-[1.02]">
                    <div className="flex items-center gap-2">
                      <CreditCard className="w-6 h-6" />
-                     <span className="tracking-widest">BANK CARD</span>
+                     <span className="tracking-widest">你的錢包</span>
                    </div>
                    <div className="text-2xl font-mono font-bold">${balance}</div>
                 </div>
@@ -418,14 +418,14 @@
           let content = "";
 
           if (stage === 1) {
-            title = "階段一總結：自給自足";
-            content = "你發現了嗎？想要什麼都得自己做，非常累且效率很低。如果每個人只專心做一件事，然後互相交換，效率會不會更高？";
+            title = "階段一：自給自足";
+            content = "你發現了嗎？想要什麼都得自己做，非常累且效率很低。如果每個人做自己擅長的事，然後互相交換，效率會不會更高？";
           } else if (stage === 2) {
-            title = "階段二總結：以物易物";
-            content = "雖然可以交換了，但要找到「剛好想要你的東西，又剛好有你想要的東西」的人很難！這就是「雙重慾望巧合」的困難。";
+            title = "階段二：以物易物";
+            content = "雖然可以交換了，但要找到「剛好想要你的東西，又剛好有你想要的東西」的人很難！";
           } else if (stage === 3) {
-            title = "階段三總結：商品貨幣";
-            content = "大家約定用貝殼當媒介，交易變快了！但貝殼、黃金可能攜帶不便或有重量，數量也有限。";
+            title = "階段三：商品貨幣";
+            content = "大家約定用貝殼當媒介，交易變快了！但貝殼可能攜帶不便或有重量，數量也有限。";
           }
 
           return (
@@ -540,7 +540,7 @@
                   
                   {stage === 0 && (
                     <div className="text-center space-y-6 my-auto animate-in fade-in zoom-in duration-500">
-                      <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">貨幣的演進</h1>
+                      <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">交易的演進與貨幣的誕生</h1>
                       <p className="text-gray-600">這是一個互動模擬器，帶你體驗從原始社會到現代經濟的過程。</p>
                       <div className="flex justify-center gap-4 text-4xl my-4 animate-pulse">
                         <span>🌾</span><span>➡️</span><span>🤝</span><span>➡️</span><span>🐚</span><span>➡️</span><span>💳</span>
@@ -567,9 +567,9 @@
                         <p><strong>回顧重點：</strong></p>
                         <ul className="list-disc list-inside space-y-1">
                            <li><strong>自給自足：</strong> 什麼都要自己做，沒效率。</li>
-                           <li><strong>以物易物：</strong> 需要雙方需求剛好吻合 (難)。</li>
+                           <li><strong>以物易物：</strong> 需要雙方需求剛好吻合。</li>
                            <li><strong>商品貨幣：</strong> 大家都接受的東西 (如貝殼)，方便交易。</li>
-                           <li><strong>法定貨幣：</strong> 國家信用擔保，輕便、好攜帶、可數位化。</li>
+                           <li><strong>法定貨幣：</strong> 國家信用擔保，輕便、好攜帶。</li>
                         </ul>
                       </div>
                       <button onClick={() => {
@@ -610,4 +610,5 @@
         root.render(<EvolutionGame />);
     </script>
 </body>
+
 </html>
